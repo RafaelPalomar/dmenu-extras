@@ -1,0 +1,11 @@
+#!/bin/bash
+
+declare MSG="Do you really want to quit?"
+declare -a options=("No
+Yes")
+
+if [ $# -gt 1 ];
+then
+   MSG=$@
+fi
+echo -e "${options[@]}" | dmenu -p "${MSG}"
